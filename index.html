@@ -45,7 +45,7 @@
           <section class="job">
             <div class="job-title">
               <h3>Software Engineer II</h3>
-              <h4 class="xxs-text">
+              <h4>
                 <a href="https://www.babelstreet.com/">Babel Street</a> <br />
                 July 2018 - Present
               </h4>
@@ -67,7 +67,7 @@
           <section class="job">
             <div class="job-title">
               <h3>Web Developer</h3>
-              <h4 class="xxs-text">
+              <h4>
                 <a href="http://lib.msstate.edu/"
                   >Mississippi State University Libraries</a
                 >
@@ -96,7 +96,7 @@
           <section class="job">
             <div class="job-title">
               <h3>Web Associate</h3>
-              <h4 class="xxs-text">
+              <h4>
                 <a href="http://wljt.org/"
                   >Public Broadcasting Network - WLJT</a
                 >
@@ -121,7 +121,7 @@
           <section class="job">
             <div class="job-title">
               <h3>Web Developer</h3>
-              <h4 class="xxs-text">
+              <h4>
                 <a href="https://www.utm.edu/departments/itc/"
                   >ITC - University of Tenessee at Martin</a
                 >
@@ -234,7 +234,9 @@
   <script>
     function changeColorMode() {
       function getIsDarkMode() {
-        const bodyContainsDarkCss = document.querySelector("body").classList.contains("dark-mode")
+        const bodyContainsDarkCss = document
+          .querySelector("body")
+          .classList.contains("dark-mode");
 
         return bodyContainsDarkCss;
       }
@@ -266,13 +268,13 @@
       }
 
       const userPrefersDarkMode =
-          window.matchMedia &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
 
       changeSocialIcons(getIsDarkMode());
       changeCSS(getIsDarkMode());
     }
 
-    changeColorMode()
+    changeColorMode();
   </script>
 </html>
