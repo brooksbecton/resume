@@ -4,16 +4,52 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
+:root {
+  --dark-background-color: #121212;
+  --light-background-color: #f2f3f4;
+  --light-font-color: #333;
+  --dark-font-color: #f2f3f4;
+}
+
 html {
   font-size: 100%;
 } /*16px*/
 
 body {
-  background-color: white;
+  background-color: var(--light-background-color);
+  color: var(--light-font-color);
   font-weight: 400;
   line-height: 1.65;
-  color: #333;
 }
+
+/* Light Mode */
+.light-mode {
+  background-color: var(--light-background-color);
+  color: var(--light-font-color);
+}
+.light-mode a {
+  color: #0017eb;
+}
+
+.light-mode a:visited {
+  color: #5f00eb;
+}
+
+/* End Light Mode */
+
+.dark-mode {
+  background-color: var(--dark-background-color);
+  color: var(--dark-font-color);
+}
+
+.dark-mode a {
+  color: #00bfff;
+}
+
+.dark-mode a:visited {
+  color: #bc89e6;
+}
+/* End Dark Mode */
 
 p {
   margin-bottom: 1.15rem;
@@ -113,6 +149,34 @@ main {
 }
 
 .name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name button {
+  height: 40px;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.name button img {
+  padding: 0;
+  margin: 0;
+}
+
+.name h1 {
+  padding: 0;
+  margin: 0;
+  flex-grow: 5;
   font-weight: bold;
   letter-spacing: -3.5px;
+}
+
+.name img {
+  width: 40px;
+  padding-left: 10px;
 }

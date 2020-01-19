@@ -25,7 +25,19 @@
   </head>
   <body>
     <main>
-      <h1 class="name">Brooks Becton</h1>
+      <div class="name">
+        <h1 class="name">Brooks Becton</h1>
+
+        <button aria-label="Enable Dark Mode" onclick="changeColorMode()">
+          <img src="assets/sun.svg" alt="Sun Icon" />
+        </button>
+        <a href="https://twitter.com/YaBoiBrooks">
+          <img src="assets/twitter.png" alt="Twitter Icon"
+        /></a>
+        <a href="https://github.com/brooksbecton">
+          <img src="assets/github.png" alt="Github Icon"
+        /></a>
+      </div>
       <div class="container">
         <div class="left">
           <h2>Experience</h2>
@@ -219,4 +231,48 @@
       </div>
     </main>
   </body>
+  <script>
+    function changeColorMode() {
+      function getIsDarkMode() {
+        const bodyContainsDarkCss = document.querySelector("body").classList.contains("dark-mode")
+
+        return bodyContainsDarkCss;
+      }
+
+      function changeSocialIcons(isDarkMode) {
+        const nameContainer = document.querySelectorAll(".name img");
+        nameContainer.forEach(icon => {
+          const fileSrc = icon.getAttribute("src");
+          const isDarkMode1 = fileSrc.includes("assets/dark");
+          const iconFile = fileSrc.substring(isDarkMode1 ? 12 : 7);
+          icon.removeAttribute("src");
+          icon.setAttribute(
+            "src",
+            `assets/${isDarkMode1 ? "" : "dark/"}${iconFile}`
+          );
+        });
+      }
+
+      function changeCSS(isDarkMode) {
+        const body = document.querySelector("body");
+        if (isDarkMode === false) {
+          body.classList.remove("light-mode");
+          body.classList.add("dark-mode");
+        } else {
+          // LEEETTTT THE SUNNNSHIIIINNNNEEE
+          body.classList.remove("dark-mode");
+          body.classList.add("light-mode");
+        }
+      }
+
+      const userPrefersDarkMode =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      changeSocialIcons(getIsDarkMode());
+      changeCSS(getIsDarkMode());
+    }
+
+    changeColorMode()
+  </script>
 </html>
