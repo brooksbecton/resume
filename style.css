@@ -1,0 +1,118 @@
+/* System Fonts as used by Medium and WordPress */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+html {
+  font-size: 100%;
+} /*16px*/
+
+body {
+  background-color: white;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #333;
+}
+
+p {
+  margin-bottom: 1.15rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 2.75rem 0 1.05rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+h1,
+.lg-text {
+  margin-top: 0;
+  font-size: 3.052em;
+}
+
+h2,
+.md-text {
+  font-size: 2.441em;
+}
+
+h3,
+.sm-text {
+  font-size: 1.953em;
+}
+
+h4,
+.xs-text {
+  font-size: 1.563em;
+}
+
+h5,
+.xxs-text {
+  font-size: 1.25em;
+}
+
+small,
+.xxxs-text {
+  font-size: 0.8em;
+}
+
+main {
+  padding-top: 2%;
+  padding-right: 10%;
+  padding-bottom: 2%;
+  padding-left: 10%;
+}
+
+@media only screen and (max-width: 1200px) {
+  main {
+    padding: 2%;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+.container div {
+  padding: 10px;
+}
+
+.education a {
+  display: block;
+  padding-top: 1.15rem;
+}
+
+.education a:nth-child(1) {
+  padding-top: 0px;
+}
+
+.job-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.job-title h3 {
+  font-weight: bold;
+}
+.job-title h4 {
+  text-align: right;
+  font-style: italic;
+}
+
+.name {
+  font-weight: bold;
+  letter-spacing: -3.5px;
+}
