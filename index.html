@@ -28,13 +28,19 @@
       <div class="name">
         <h1 class="name">Brooks Becton</h1>
 
-        <button aria-label="Enable Dark Mode" onclick="changeColorMode()">
+        <button id="color-mode" onclick="changeColorMode()">
           <img src="assets/sun.svg" alt="Sun Icon" />
         </button>
-        <a href="https://twitter.com/YaBoiBrooks">
+        <a
+          href="https://twitter.com/YaBoiBrooks"
+          aria-label="Visit Brooks Becton's Twitter Profile"
+        >
           <img src="assets/twitter.png" alt="Twitter Icon"
         /></a>
-        <a href="https://github.com/brooksbecton">
+        <a
+          href="https://github.com/brooksbecton"
+          aria-label="Visit Brooks Becton's Github Profile"
+        >
           <img src="assets/github.png" alt="Github Icon"
         /></a>
       </div>
@@ -267,12 +273,25 @@
         }
       }
 
+      function changeColorChangeButtonLabel(isDarkMode) {
+        const colorChangeButton = document.querySelector(
+          "#color-mode"
+        );
+
+        colorChangeButton.removeAttribute("aria-label");
+        colorChangeButton.setAttribute(
+          "aria-label",
+          `Enable ${isDarkMode ? "Light" : "Dark"} Mode`
+        );
+      }
+
       const userPrefersDarkMode =
         window.matchMedia &&
         window.matchMedia("(prefers-color-scheme: dark)").matches;
 
       changeSocialIcons(getIsDarkMode());
       changeCSS(getIsDarkMode());
+      changeColorChangeButtonLabel(getIsDarkMode());
     }
 
     changeColorMode();
