@@ -238,6 +238,17 @@
     </main>
   </body>
   <script>
+    let userPrefersDarkMode =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    window.matchMedia("(prefers-color-scheme: dark)").addListener(() => {
+      userPrefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches;
+
+      changeColorMode();
+    });
+
     function changeColorMode() {
       function getIsDarkMode() {
         const bodyContainsDarkCss = document
@@ -247,23 +258,22 @@
         return bodyContainsDarkCss;
       }
 
-      function changeSocialIcons(isDarkMode) {
+      function changeSocialIcons(userPrefersDarkMode) {
         const nameContainer = document.querySelectorAll(".name img");
         nameContainer.forEach(icon => {
           const fileSrc = icon.getAttribute("src");
-          const isDarkMode1 = fileSrc.includes("assets/dark");
-          const iconFile = fileSrc.substring(isDarkMode1 ? 12 : 7);
+          const file = fileSrc.split("/").pop();
           icon.removeAttribute("src");
           icon.setAttribute(
             "src",
-            `assets/${isDarkMode1 ? "" : "dark/"}${iconFile}`
+            `assets/${userPrefersDarkMode ? "dark/" : ""}${file}`
           );
         });
       }
 
-      function changeCSS(isDarkMode) {
+      function changeCSS(userPrefersDarkMode) {
         const body = document.querySelector("body");
-        if (isDarkMode === false) {
+        if (userPrefersDarkMode === true) {
           body.classList.remove("light-mode");
           body.classList.add("dark-mode");
         } else {
@@ -274,9 +284,7 @@
       }
 
       function changeColorChangeButtonLabel(isDarkMode) {
-        const colorChangeButton = document.querySelector(
-          "#color-mode"
-        );
+        const colorChangeButton = document.querySelector("#color-mode");
 
         colorChangeButton.removeAttribute("aria-label");
         colorChangeButton.setAttribute(
@@ -285,13 +293,11 @@
         );
       }
 
-      const userPrefersDarkMode =
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      changeSocialIcons(userPrefersDarkMode);
+      changeCSS(userPrefersDarkMode);
+      changeColorChangeButtonLabel(userPrefersDarkMode);
 
-      changeSocialIcons(getIsDarkMode());
-      changeCSS(getIsDarkMode());
-      changeColorChangeButtonLabel(getIsDarkMode());
+      userPrefersDarkMode = !userPrefersDarkMode;
     }
 
     changeColorMode();

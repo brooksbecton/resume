@@ -16,8 +16,6 @@ html {
 } /*16px*/
 
 body {
-  background-color: var(--light-background-color);
-  color: var(--light-font-color);
   font-weight: 400;
   line-height: 1.65;
 }
@@ -37,6 +35,7 @@ body {
 
 /* End Light Mode */
 
+/* Dark Mode */
 .dark-mode {
   background-color: var(--dark-background-color);
   color: var(--dark-font-color);
@@ -193,4 +192,51 @@ main {
 .name img {
   width: 40px;
   padding-left: 10px;
+}
+
+@media print {
+  html {
+    font-size: 70%;
+  }
+  body {
+    color: #000;
+  }
+  main {
+    padding: 0;
+  }
+
+  a,
+  a:visited {
+    text-decoration: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark-background-color);
+    color: var(--dark-font-color);
+  }
+
+  a {
+    color: #00bfff;
+  }
+
+  a:visited {
+    color: #bc89e6;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--light-background-color);
+    color: var(--light-font-color);
+  }
+
+  a {
+    color: #0017eb;
+  }
+
+  a:visited {
+    color: #5f00eb;
+  }
 }
