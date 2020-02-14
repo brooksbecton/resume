@@ -194,23 +194,6 @@ main {
   padding-left: 10px;
 }
 
-@media print {
-  html {
-    font-size: 70%;
-  }
-  body {
-    color: #000;
-  }
-  main {
-    padding: 0;
-  }
-
-  a,
-  a:visited {
-    text-decoration: none;
-  }
-}
-
 @media (prefers-color-scheme: dark) {
   body {
     background-color: var(--dark-background-color);
@@ -238,5 +221,31 @@ main {
 
   a:visited {
     color: #5f00eb;
+  }
+}
+
+@media print {
+  html {
+    font-size: 70%;
+  }
+  body.dark-mode {
+    background-color: var(--light-background-color);
+    color: var(--light-font-color);
+  }
+  main {
+    padding: 0;
+  }
+  a,
+  a:visited,
+  .light-mode a,
+  .light-mode a:visited,
+  .dark-mode a,
+  .dark-mode a:visited {
+    color: #000;
+    text-decoration: none;
+  }
+
+  img {
+    display: none;
   }
 }
