@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="Description" content="Software Developer Brooks Becton's resume">
+    <meta
+      name="Description"
+      content="Software Developer Brooks Becton's resume"
+    />
     <title>Brooks Becton Resumé</title>
 
     <link rel="stylesheet" href="style.css" />
@@ -64,9 +67,13 @@
                 and design
               </li>
               <li>
-                Facilitate Scrum for the mobile app’s sprint team by running
+                Facilitate Scrum for the my sprint team by running
                 agile ceremonies, eliminating impediments, and research emerging
                 ideas in agile.
+              </li>
+              <li>
+                Create mockups and designs to explore new ideas then present
+                them to the company at our sprint review
               </li>
             </ul>
           </section>
@@ -188,9 +195,12 @@
           <h2>Projects</h2>
 
           <a href="https://brooksbecton.github.io/recipes/"
-            ><h3>Recipes Site</h3></a
+            ><h3>Recipes Repository</h3></a
           >
-          <p>Personal Recipe Website</p>
+          <p>
+            A recipe organization site with tags for categorization and
+            searching
+          </p>
           <ul>
             <li>
               <a href="https://www.gatsbyjs.org/">Gatsby</a>
@@ -234,6 +244,24 @@
               <a href="https://ramdajs.com/">ramda</a>
             </li>
           </ul>
+
+          <!-- https://media.giphy.com/media/xFpT7lMV5Mkqq0E6YM/giphy.gif -->
+          <!-- <a href="https://brooksbecton.github.io/cah/"
+            ><h3>Cards Against Humanity App</h3></a
+          >
+          <p>
+            Play Cards Against Humanity online with an accessible drag and drop
+            interface
+          </p>
+          <ul>
+            <li><a href="https://www.cypress.io/ ">Cypress</a></li>
+            <li><a href="https://boardgame.io/">Boardgame.io</a></li>
+            <li>
+              <a href="https://github.com/atlassian/react-beautiful-dnd"
+                >React Beautiful DnD</a
+              >
+            </li>
+          </ul> -->
         </div>
       </div>
     </main>
@@ -261,7 +289,7 @@
 
       function changeSocialIcons(userPrefersDarkMode) {
         const nameContainer = document.querySelectorAll(".name img");
-        nameContainer.forEach(icon => {
+        nameContainer.forEach((icon) => {
           const fileSrc = icon.getAttribute("src");
           const file = fileSrc.split("/").pop();
           icon.removeAttribute("src");
