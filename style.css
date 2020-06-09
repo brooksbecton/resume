@@ -96,6 +96,11 @@ small,
   font-size: 0.8em;
 }
 
+li a {
+  display: inline-block;
+  padding-bottom: 0.8em;
+  padding-top: 0.8em;
+}
 main {
   padding-top: 2%;
   padding-right: 10%;
