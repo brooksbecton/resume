@@ -1,0 +1,111 @@
+:root{
+    --background-color: #eeefff
+    --lavender: #aabbff; 
+    --gold-sun: #feff88;
+    --soft-sun: #feffdc;
+    --sky: #88ccfe
+}
+
+body{
+    background-color: var(--background-color)
+}
+
+
+.name a {
+    background-color: lightgrey;
+    color: black;
+    text-decoration: none;
+
+    text-align: center;
+
+    border-style: solid;
+
+    border-right-color: black;
+    border-bottom-color: black;
+
+    border-left-color: white;
+    border-top-color: white;
+
+
+    color: transparent;
+    text-shadow: 0 0 2px rgba(0,0,0,0.9);
+
+    padding: 5px;
+  }
+  .name a:active,.name a:focus  {
+    border-right-color: white;
+    border-bottom-color: white;
+
+    border-left-color: black;
+    border-top-color: black;
+  }
+  
+
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+.left {
+    flex: 3;
+}
+
+.right {
+    flex: 1;
+}
+
+.name {
+    display: flex;
+
+}
+
+
+.job {
+    background-color: var(--gold-sun);
+    display: flex; 
+
+
+    flex-direction: row;
+    justify-content: center;
+}
+
+.job-title {
+    display: flex; 
+    flex-direction: row;
+    flex: 1;
+
+
+
+    border: var(--sky);
+    border-width: 3px;
+    border-style: double;
+
+    border-right: 0px; 
+}
+
+.job-title h3, .job-title h4{
+    margin: 0px; 
+    padding: 0px; 
+
+    flex: 1;
+
+    padding: 40px; 
+
+}
+
+.job-title h3 {
+
+    border-right: var(--sky);
+    border-right-style: double;
+    border-right-width: 3px;
+}
+
+.job ul {
+    flex: 3;
+
+    margin: 0px; 
+    padding: 40px; 
+    border: var(--sky);
+    border-width: 3px;
+    border-style: double;
+}
