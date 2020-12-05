@@ -255,4 +255,10 @@ main {
   img {
     display: none;
   }
+
+
+  li a {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
 }
