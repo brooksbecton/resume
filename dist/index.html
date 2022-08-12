@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="Description"
+      content="Software Developer Brooks Becton's resumé"
+    />
+    <title>Brooks Becton Resumé</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    
+    <script>
+      function checkUserThemePreferences() {
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      }
+
+      function toggleTheme() {
+        const previousTargetMode = localStorage.getItem("theme") ?? "light";
+        const wasLightMode = previousTargetMode === "light";
+        const targetMode = wasLightMode ? "dark" : "light";
+
+        localStorage.setItem("theme", targetMode);
+
+        document.documentElement.classList.remove(previousTargetMode);
+        document.documentElement.classList.add(targetMode);
+
+        const main = document.querySelector("main");
+        const targetAnimationName = wasLightMode
+          ? "fadeToBlack"
+          : "fadeToWhite";
+        main.classList.remove("");
+      }
+
+      checkUserThemePreferences();
+    </script>
+    <link rel="stylesheet" href="/assets/index.629223a7.css">
+  </head>
+  <body>
+    <main
+      class="bg-slate-200 dark:text-white print:text-black dark:bg-stone-900 p-8 pb-36 lg:px-44 print:p-0"
+    >
+      <div class="flex justify-between mb-8 print:mb-0">
+        <h1 class="font-bold text-3xl">Brooks Becton</h1>
+
+        <div class="flex items-center space-x-4">
+          <button
+            class="hover:bg-gray-400 dark:hover:bg-neutral-700 rounded print:hidden"
+            onclick="window.print()"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"
+              />
+            </svg>
+          </button>
+          <button
+            class="hover:bg-gray-400 hover:dark:bg-neutral-700 rounded print:hidden"
+            id="color-mode"
+            onclick="toggleTheme()"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+          </button>
+
+          <a
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/brooksbecton/"
+            aria-label="Brooks Becton's Linked In Profile"
+            class="print:hidden"
+          >
+            <svg
+              class="w-8 h-8 hover:fill-blue-700 dark:fill-white"
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>LinkedIn</title>
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              /></svg
+          ></a>
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row print:flex-row">
+        <div class="w-full lg:w-3/4 print:w-7/12 mr-4 lg:mr-12">
+          <h2 class="text-2xl mb-4">Experience</h2>
+
+          <div class="space-y-12 print:space-y-0">
+            <section>
+              <div
+                class="flex justify-between items-start text-right mb-3 print:mb-0"
+              >
+                <h3 class="text-xl">Senior Developer</h3>
+                <h4>
+                  <a class="underline" href="https://www.bounteous.com/"
+                    >Bounteous</a
+                  >
+                  <br />
+                  October 2021 - Present
+                </h4>
+              </div>
+              <ul class="ml-12 space-y-2 list-disc">
+                <li>
+                  Develop web technology solutions for a Fortune 500 client in
+                  the Entertainment industry.
+                </li>
+                <li>
+                  Integrate with client teams to help plan work and give
+                  technical feedback.
+                </li>
+                <li>
+                  Provide mentorship by giving career advice as well as
+                  answering technical questions.
+                </li>
+                <li>
+                  Use React, Redux, and Redux Saga to implement new features and
+                  fix old issues.
+                </li>
+              </ul>
+            </section>
+            <section>
+              <div
+                class="flex justify-between items-start text-right mb-3 print:mb-0"
+              >
+                <h3 class="text-xl">Software Engineer III</h3>
+                <h4>
+                  <a class="underline" href="https://www.babelstreet.com/"
+                    >Babel Street</a
+                  >
+                  <br />
+                  July 2018 - October 2021
+                </h4>
+              </div>
+              <ul class="ml-12 space-y-2 list-disc">
+                <li>
+                  Maintain Babel Street's mobile app through development,
+                  testing, and design
+                </li>
+                <li>
+                  Create business value with technologies such as React, React
+                  Native, TypeScript, and React Navigation
+                </li>
+                <li>
+                  Create mockups and designs to explore new ideas then present
+                  them to the company at our sprint review
+                </li>
+                <li>
+                  Participate in Scrum for the mobile sprint team by helping
+                  plan sprints, identify impediments, and research different
+                  ways to increase throughput
+                </li>
+              </ul>
+            </section>
+            <section>
+              <div
+                class="flex justify-between items-start text-right mb-3 print:mb-0"
+              >
+                <h3 class="text-xl">Web Developer</h3>
+                <h4>
+                  <a class="underline" href="http://lib.msstate.edu/"
+                    >Mississippi State University Libraries</a
+                  >
+                  <br />
+                  June 2017 - July 2018
+                </h4>
+              </div>
+              <ul class="ml-12 space-y-2 list-disc">
+                <li>
+                  Collaborated with project manager to ensure that tasks are
+                  prioritized and deadlines are met
+                </li>
+                <li>
+                  Implemented mockups and ideas from designer to assure good UX
+                  and accessibility
+                </li>
+                <li>
+                  Created new projects using JavaScript frameworks, such as
+                  React and Meteor, ensuring rapid development, good application
+                  structure, and robust testing
+                </li>
+              </ul>
+            </section>
+            <section class="print:hidden">
+              <div class="flex justify-between items-center text-right">
+                <h3 class="text-xl">Web Developer</h3>
+                <h4>
+                  <a
+                    class="underline"
+                    href="https://www.utm.edu/departments/itc/"
+                    >ITC - University of Tenessee at Martin</a
+                  >
+                  <br />
+                  February 2014 - May 2017
+                </h4>
+              </div>
+              <ul class="ml-12 space-y-2 list-disc">
+                <li>
+                  Used HTML, CSS, PHP, and JavaScript to keep the UTM’s website
+                  clear, responsive and accessible
+                </li>
+                <li>
+                  Used a ticket system to organize requests and communicate with
+                  other team members to ensure that tasks are taken care if in
+                  an effective and timely manner
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+
+        <div class="w-full lg:w-1/4 print:w-5/12">
+          <h2 class="text-2xl mb-4">Projects</h2>
+
+          <div class="mb-8 print:mb-0">
+            <a
+              class="underline"
+              href="https://www.extendednightcompanion.com/"
+              rel="noreferrer"
+              target="_blank"
+              ><h3 class="text-lg">Extended Night App</h3></a
+            >
+            <p>
+              An Android and iOS app with maps and tools to help a player in the
+              game The Long Dark® with over 3,000 installs.
+            </p>
+            <ul class="ml-12 space-y-2 list-disc">
+              <li>Expo</li>
+              <li>React Native</li>
+              <li>Google Admob</li>
+              <li>TypeScript</li>
+              <li>React Native Paper</li>
+            </ul>
+          </div>
+          <div class="mb-8 print:mb-0">
+            <a
+              class="underline"
+              href="https://play.google.com/store/apps/details?id=com.babelstreet.mobile"
+              rel="noreferrer"
+              target="_blank"
+              ><h3 class="text-lg">Babel Street App</h3></a
+            >
+            <p>
+              An Android and iOS app that allows customers to gain insights on
+              topics and events from their Babel X data or from Babel Channels.
+            </p>
+
+            <ul class="ml-12 space-y-2 list-disc">
+              <li>Expo</li>
+              <li>React Native</li>
+              <li>TypeScript</li>
+              <li>Redux</li>
+            </ul>
+          </div>
+
+          <h2 class="text-2xl mb-4">Education</h2>
+          <div class="ml-8 flex flex-col">
+            <p>University of Tennessee at Martin</p>
+            <p>Bachelor of Science in Computer</p>
+            Science
+          </div>
+          <div
+            class="hidden print:flex flex-col w-full h-1/3 justify-center items-center"
+          >
+            <img
+              class="h-52 w-52"
+              src="./qr-code.png"
+              alt="QR Code that leads to https://brooksbecton.github.io/resume/"
+            />
+            <p class="text-md w-full text-center">
+              https://brooksbecton.github.io/resume/
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
