@@ -20,7 +20,9 @@
             window.matchMedia("(prefers-color-scheme: dark)").matches)
         ) {
           document.documentElement.classList.add("dark");
+          localStorage.setItem("theme", "dark")
         } else {
+          localStorage.setItem("theme", "light")
           document.documentElement.classList.remove("dark");
         }
       }
@@ -34,12 +36,6 @@
 
         document.documentElement.classList.remove(previousTargetMode);
         document.documentElement.classList.add(targetMode);
-
-        const main = document.querySelector("main");
-        const targetAnimationName = wasLightMode
-          ? "fadeToBlack"
-          : "fadeToWhite";
-        main.classList.remove("");
       }
 
       checkUserThemePreferences();
