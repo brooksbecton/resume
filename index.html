@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="h-auto min-h-screen" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -49,9 +49,9 @@
     </script>
   </head>
 
-  <body>
+  <body class="h-full min-h-screen">
     <main
-      class="flex h-full justify-center bg-slate-200 p-4 pt-11 pb-36 text-slate-900 dark:bg-stone-900 dark:text-white print:p-0 print:text-slate-900 dark:print:text-slate-900"
+      class="flex h-full min-h-screen justify-center bg-slate-200 p-4 pt-11 pb-36 text-slate-900 dark:bg-stone-900 dark:text-white print:p-0 print:text-slate-900 dark:print:text-slate-900"
     >
       <div class="max-w-screen-lg">
         <div class="mb-8 flex justify-between print:mb-0">
@@ -218,7 +218,23 @@
             </div>
           </div>
           <div class="w-full print:w-5/12 lg:w-1/3">
-            <h2 class="mb-4 text-2xl">Projects</h2>
+            <h2 class="mb-4 mt-4 text-2xl lg:mt-0">Technologies</h2>
+            <div class="mb-8 print:mb-4">
+              <ul
+                class="ml-12 flex max-h-32 list-disc flex-col flex-wrap gap-y-2"
+              >
+                <li>TypeScript</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>NextJS</li>
+                <li>Vite</li>
+                <li>TailwindCSS</li>
+                <li>Testing Library</li>
+                <li>Playwright</li>
+              </ul>
+            </div>
+
+            <h2 class="mb-4 text-2xl">Side Projects</h2>
             <div class="mb-8 print:mb-4">
               <a
                 class="underline print:no-underline"
@@ -238,7 +254,7 @@
                 the video game The Long Dark® with over 10,000 installs and a 5
                 star rating.
               </p>
-              <ul class="ml-12 list-disc space-y-2">
+              <ul class="ml-12 mt-4 list-disc space-y-2">
                 <li>Expo</li>
                 <li>Keystone.js</li>
                 <li>Apollo GraphQL</li>
@@ -246,27 +262,7 @@
                 <li>Leaflet.js</li>
               </ul>
             </div>
-            <div class="mb-8 print:mb-4">
-              <a
-                class="underline print:no-underline"
-                href="https://play.google.com/store/apps/details?id=com.babelstreet.mobile"
-                rel="noreferrer"
-                target="_blank"
-              >
-                <h3 class="text-lg">Babel Street App</h3>
-              </a>
-              <p>
-                An Android and iOS app that allows customers to gain insights on
-                topics and events from their Babel X data or from Babel
-                Channels.
-              </p>
-              <ul class="ml-12 list-disc space-y-2">
-                <li>Expo</li>
-                <li>React Native</li>
-                <li>TypeScript</li>
-                <li>Redux</li>
-              </ul>
-            </div>
+
             <h2 class="mb-4 text-2xl">Education</h2>
             <div class="ml-8 flex flex-col">
               <p>University of Tennessee at Martin</p>
