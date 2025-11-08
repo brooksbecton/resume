@@ -1,3 +1,37 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --animate-fade-to-black: fadeToBlack 0.5s ease-in-out;
+  --animate-fade-to-light: fadeToBlack 0.5s ease-in-out reverse;
+
+  @keyframes fadeToBlack {
+    0% {
+      background-color: oklch(92.9% 0.013 255.508);
+      text-color: oklch(20.8% 0.042 265.755);
+    }
+    100% {
+      background-color: oklch(21.6% 0.006 56.043);
+      text-color: oklch(96.8% 0.007 247.896);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
